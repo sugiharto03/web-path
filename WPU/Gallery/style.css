@@ -1,0 +1,159 @@
+body{
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    background-color: #ddd;
+    
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 55px;
+    margin-top: 20px;
+    text-shadow: 1px 3px gainsboro;
+}
+
+.container{
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    width: 600px;
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,.5);
+    border-radius: 20px;
+}
+
+.gallery li{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;     /* apapun yang keluar dari li disembunyikan */
+    border: 5px solid #666;
+    float: left;            /* jadikan elemen mengambang di sebelah kiri */
+    margin-right: 20px;
+    position: relative;
+}
+
+/* menghemat penulisan */
+.gallery li, 
+.gallery li img, /*imgnya dikasih border radius biar nyatu sama kerangka awalnnya*/
+.gallery li span{
+    border-radius: 50%;
+}
+
+/* pisahkan image sama spannya baru disatukan lagi pake position */
+.gallery li span{
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200,200,200,.5);
+    text-align: center;
+    line-height: 120px;
+    position: absolute;   /* biar naik satu dimensi habis itu diatur biar topnya 0 */
+    top: 0px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    opacity: 0;
+    transition: .3s;
+}
+
+/* maksudnya ketika tag "a" pada li di hover opacity pada span nya muncul */
+.gallery li a:hover span{
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear{
+    clear: both;
+}
+
+/* overlay */
+
+/* sebelum */
+.overlay{
+    /* buat ukuran overlay sangat kecil sebelum di klik */
+    width: 0;
+    height: 0;
+    overflow: hidden; /*buat overlaynya hilang*/
+    /* buat position fixed biar pas scroll gak ke ganggu, terus ubah jadi 0 top,left,right,bottom 
+    -> biar mudah, ini adalah syarat membuat overlay*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 999; /*biar background-color nya di dimensi paling depan */
+    transition: 0;
+    text-align: center;
+    padding: 100px;
+}
+
+/* sesudah */
+.overlay:target{
+    transition: .8s;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    /* potong kakinya, biar pas tekan baru muncul efek overlaynya */
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+    
+    
+}
+
+.overlay .square{
+    max-height: 100%;
+    border-radius: 0%;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+    
+}
+
+.overlay:target img .square{
+    animation: ZoomdanFade 1s; 
+}
+
+
+/* animation */
+@keyframes ZoomdanFade{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* close button */
+.overlay .close{
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -37px;
+
+    /* tampilan link */
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 7px;
+
+}
+
+.overlay:target .close{
+    animation: slidedownfade .5s .5s forwards;
+}
+
+
+@keyframes slidedownfade {
+    0%{
+        opacity: 0;
+        margin-top: -20px;
+    }
+    
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}

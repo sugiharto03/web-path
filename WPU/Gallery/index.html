@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gallery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- CSS Setting -->
+    <link rel='stylesheet' type='text/css' media='screen' href='reset.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+    <!-- font setting -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>National Geographic</h1>
+    <div class="container">
+        <ul class="gallery">
+            <li>
+                <!-- tanda "#" untuk mentrigger id overlay di bawah. kalau ditekan ikut kepanggil -->
+                <a href="#gambar-1">
+                    <img src="img/Thumbnail/pexels-amber-janssens-7327624.jpg" alt="Buffalo">
+                    <span>Buffalo</span>
+                </a>
+
+                <div class="overlay" id="gambar-1">
+                    <a href="#" class="close">X-Close</a> <!-- kasih tanda "#" , berfungsi untuk menghilangkan id-nya -->
+                    <img class="square" src="img/Full/pexels-amber-janssens-7327624.jpg" alt="Buffalo" >
+                </div>
+
+            </li>
+            <li>
+                <a href="#gambar-2">
+                    <img src="img/Thumbnail/pexels-alex-andrews-2295744 (1).jpg" alt="Foxes">
+                    <span>Foxes</span>
+                </a>
+
+                <div class="overlay" id="gambar-2">
+                    <a href="#" class="close">X-Close</a> 
+                    <img class="square" src="img/Full/pexels-alex-andrews-2295744.jpg" alt="Foxes" >
+                </div>
+
+            </li>
+            <li>
+                <a href="#gambar-3">
+                    <img src="img/Thumbnail/pexels-david-selbert-7853219 (1).jpg" alt="Deers">
+                    <span>Deers</span>
+                </a>
+
+                <div class="overlay" id="gambar-3">
+                    <a href="#" class="close">X-Close</a> 
+                    <img class="square" src="img/Full/pexels-david-selbert-7853219.jpg" alt="Deers" >
+                </div>
+            </li>
+            <li>
+                <a href="#gambar-4">
+                    <img src="img/Thumbnail/pexels-ryutaro-tsukata-6249428.jpg" alt="Anvelope">
+                    <span>Anvelope</span>
+                </a>
+
+                <div class="overlay" id="gambar-4">
+                    <a href="#" class="close">X-Close</a> 
+                    <img class="square" src="img/Full/pexels-ryutaro-tsukata-6249428.jpg" alt="Anvelope" >
+                </div>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+</body>
+</html>

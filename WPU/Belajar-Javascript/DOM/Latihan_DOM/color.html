@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Color</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="">
+    <style>
+      body {
+        text-align: center;
+      }
+      .KotakMerah,
+      .KotakHijau,
+      .KotakBiru{
+        width: 55px;
+        height: 15px;
+        margin: 10px auto;
+      }
+
+      .KotakMerah{
+        background-color: red;
+      }
+      .KotakHijau{
+        background-color: green;
+      }
+      .KotakBiru{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Picker  </h1>
+    <button type="button" id="ubah">Ubah Warna</button>
+
+    <br><br>
+
+    <div>
+      <div class="KotakMerah"></div>
+      <input type="range" name="SliderMerah" min="0" max="255">
+    </div>
+    <div>
+      <div class="KotakHijau"></div>
+      <input type="range" name="SliderHijau" min="0" max="255">
+    </div>
+    <div>
+      <div class="KotakBiru"></div>
+      <input type="range" name="SliderBiru" min="0" max="255">
+    </div>
+    
+    <script src="color.js"></script>
+  </body>
+</html>
